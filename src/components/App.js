@@ -1,9 +1,8 @@
-
 import React from "react";
 
 function App() {
   return (
-    <div style={{marginTop: "3em"}}>
+    <div className="ui container" style={{marginTop: "3em"}}>
       Blog Posts
     </div>
   );
