@@ -12,13 +12,7 @@ export const getPosts = () => async (dispatch) => {
   dispatch({ type: "GET_USER_DATA", payload: responseData.data});
 } */
 
-export const getUser = function (id){
-  return function (dispatch) {
-    _getUser(id, dispatch);
-  }
-}
-
-
+export const getUser = id => dispatch => _getUser(id, dispatch);
 const _getUser = _.memoize(async (id, dispatch) => {
   const responseData = await jsonplaceholder.get(`/users/${id}`);
   dispatch({ type: "GET_USER_DATA", payload: responseData.data });
