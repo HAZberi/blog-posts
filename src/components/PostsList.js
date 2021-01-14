@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getPosts } from "../actions";
+import { getPosts, getPostsAndUsers } from "../actions";
 import UserHeader from "./UserHeader";
 
-const PostList = ({posts, getPosts}) => {
+const PostList = ({posts, getPostsAndUsers}) => {
 
     useEffect(()=>{
-        getPosts();
-    },[getPosts])
+        getPostsAndUsers();
+    },[getPostsAndUsers]);
 
     const renderListOf = (posts) => {
         if (posts.length === 0) return;
@@ -33,4 +33,4 @@ const mapStateToProps = (state) => {
     return { posts: state.posts }
 }
 
-export default connect(mapStateToProps, { getPosts })(PostList);
+export default connect(mapStateToProps, { getPostsAndUsers })(PostList);
