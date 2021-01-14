@@ -17,3 +17,7 @@ const _getUser = _.memoize(async (id, dispatch) => {
   const responseData = await jsonplaceholder.get(`/users/${id}`);
   dispatch({ type: "GET_USER_DATA", payload: responseData.data });
 });
+
+//With this approach we are only able to fetch or get User one time
+//If in our application there is a need to re-fetch the same User our application
+//can break. For this particular example application - it works as expected. 
