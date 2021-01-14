@@ -1,9 +1,8 @@
 import { combineReducers } from "redux";
+import postsReducer from "./postsReducer"
 
 
 
 export default combineReducers({
-    //A dummy key to complete a REDUX project boilerplate
-    //Trick
-    replaceMe: ()=>"hi there",
+    post: postsReducer
 });
